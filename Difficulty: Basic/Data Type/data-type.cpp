@@ -15,19 +15,12 @@ class Solution {
   public:
     int dataTypeSize(string str) {
         // your code here
-        if (str == "Character") {
-            return sizeof(char);
-        } else if (str == "Integer") {
-            return sizeof(int);
-        } else if (str == "Long") {
-            return sizeof(long long);
-        } else if (str == "Float") {
-            return sizeof(float);
-        } else if (str == "Double") {
-            return sizeof(double);
-        }
-        // If the input is not valid, return 0
-        return 0;
+        if(str == "Character")return sizeof(char);
+        else if (str == "Integer") return sizeof(int);
+        else if(str == "Long") return sizeof(long long);
+        else if(str == "Float") return sizeof(float);
+        else if (str == "Double") return sizeof(double);
+        else return -1;
     }
 };
 
