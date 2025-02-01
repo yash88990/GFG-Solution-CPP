@@ -4,11 +4,9 @@ using namespace std;
 
 
 // } Driver Code Ends
-
-
 class Solution {
   public:
-  bool dfs(vector<vector<char>>& mat, string& word , int i , int j , int index ,vector<vector<bool>> &visited ){
+   bool dfs(vector<vector<char>>& mat, string& word , int i , int j , int index ,vector<vector<bool>> &visited ){
       if(index == word.size()) return true;
       if( i < 0 || j < 0 || i >= mat.size() || j >= mat[0].size() ||
            visited[i][j] || mat[i][j] != word[index]){
@@ -40,9 +38,6 @@ class Solution {
         return false;
     }
 };
-
-
-
 
 //{ Driver Code Starts.
 int main() {
