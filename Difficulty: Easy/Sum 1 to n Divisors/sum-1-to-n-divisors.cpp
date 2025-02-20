@@ -9,11 +9,11 @@ class Solution {
   public:
     int sumOfDivisors(int n) {
         // Write Your Code here
-         int sum = 0;
-    for (int i = 1; i <= n; i++) {
-        sum += (n / i) * i;
-    }
-    return sum;
+        int sum = 0 ;
+        for(int i = 1 ; i <= n ; i++){
+            sum += (n/i) * i;
+        }
+        return sum ;
     }
 };
 
