@@ -12,10 +12,9 @@ class Solution {
   public:
     vector<int> passedBy(int a, int &b) {
         // code here
-        a = a + 1 ;
-        b = b + 2 ;
-        return { a , b};
-       
+        a = a + 1 ; // pass by value 
+        b = b + 2 ; // pass by reference
+        return {a ,b};
     }
 };
 
