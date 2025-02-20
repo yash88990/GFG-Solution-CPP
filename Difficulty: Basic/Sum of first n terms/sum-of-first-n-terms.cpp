@@ -10,11 +10,13 @@ using namespace std;
 class Solution {
   public:
     int sumOfSeries(int n) {
-    if (n == 1)
-        return 1;  // Base case: 1³ = 1
-    return (n * n * n) + sumOfSeries(n - 1);  // Recursive case
-}
-
+        // code here
+        int sum = 0;
+        for(int i = 1 ; i <= n ; i++){
+            sum += i * i * i;
+        }
+        return sum ;
+    }
 };
 
 //{ Driver Code Starts.
