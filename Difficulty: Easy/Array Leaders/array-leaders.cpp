@@ -11,22 +11,18 @@ class Solution {
   public:
     vector<int> leaders(vector<int>& arr) {
         // Code here
+        vector<int> ans;
         int n = arr.size();
-    vector<int> result;
-    
-    int max_right = arr[n - 1];  // Rightmost element is always a leader
-    result.push_back(max_right);
-
-    // Traverse from second last to first element
-    for (int i = n - 2; i >= 0; i--) {
-        if (arr[i] >= max_right) {
-            max_right = arr[i];
-            result.push_back(arr[i]);
+        int maxi = arr[n-1];
+        ans.push_back(maxi);
+        for(int j = n - 2 ; j >= 0 ; j--){
+            if(arr[j] >= arr[j+1] && arr[j] >= maxi){
+                maxi = arr[j];
+                ans.push_back(maxi);
+            }
         }
-    }
-
-    reverse(result.begin(), result.end()); 
-    return result;
+        reverse(ans.begin() , ans.end());
+        return ans;
     }
 };
 
