@@ -8,17 +8,14 @@ class Solution {
   public:
     // Function to count the number of digits in n that evenly divide n
     int evenlyDivides(int n) {
-        // code hereint
-        int count = 0;
-        long long  num = n ;
-        while( num >  0 ){
-            int digit = num % 10;
-            if(digit != 0 &&  n % digit == 0)count++;
-            num = num/10;
+        // code here
+        int count = 0  , num = n ;
+        while( num > 0){
+            int digit = num % 10 ;
+            if(digit != 0 && n % digit == 0)count++;
+            num = num/ 10;
         }
-        
         return count;
-        
     }
 };
 
