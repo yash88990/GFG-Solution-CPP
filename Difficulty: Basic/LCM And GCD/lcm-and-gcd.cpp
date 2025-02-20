@@ -6,12 +6,19 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
+  int hcf(int a , int b ){
+      while(b != 0){
+          int temp = b;
+          b = a % b;
+          a = temp;
+      }
+      return a ;
+  }
     vector<int> lcmAndGcd(int a, int b) {
         // code here
-         int gcd = __gcd(a, b);  // Compute GCD using built-in function
-         long long lcm = (1LL * a * b) / gcd;  // Compute LCM using formula
-    
-          return { (int)lcm, gcd }; 
+        int gcd = hcf(a , b);
+        int lcm = a * b / gcd;
+        return { lcm , gcd};
     }
 };
 
