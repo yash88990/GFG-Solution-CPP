@@ -56,24 +56,21 @@ public:
     void create_tree(node* root0, vector<int> &vec){
         //Your code goes here
         if (vec.empty() || !root0) return;
-    queue<node*> q;
-    q.push(root0);
-    int i = 1;
-
-    while (!q.empty() && i < vec.size()) {
-        node* current = q.front();
-        q.pop();
-
+        queue<node*> q;
+        q.push(root0);
+        int i = 1;
+        while (!q.empty() && i < vec.size()) {
+            node* current = q.front();
+            q.pop();
         // Create left child
-        current->left = newNode(vec[i++]);
-        q.push(current->left);
-
+            current->left = newNode(vec[i++]);
+             q.push(current->left);
         // Create right child (if elements remain)
-        if (i < vec.size()) {
-            current->right = newNode(vec[i++]);
-            q.push(current->right);
+            if (i < vec.size()) {
+                current->right = newNode(vec[i++]);
+                q.push(current->right);
+            }
         }
-    }
     }
 
 };
