@@ -32,6 +32,7 @@ void traverseInOrder(struct node *temp, vector<int> &inorder) {
 
 
 // } Driver Code Ends
+
 //User function Template for C++
 
 /*struct node {
@@ -55,25 +56,24 @@ public:
 
     void create_tree(node* root0, vector<int> &vec){
         //Your code goes here
-        if (vec.empty() || !root0) return;
+        if(vec.empty() || !root0 )return ;
         queue<node*> q;
         q.push(root0);
-        int i = 1;
-        while (!q.empty() && i < vec.size()) {
-            node* current = q.front();
-            q.pop();
-        // Create left child
-            current->left = newNode(vec[i++]);
-             q.push(current->left);
-        // Create right child (if elements remain)
-            if (i < vec.size()) {
-                current->right = newNode(vec[i++]);
-                q.push(current->right);
+        int i = 1 ;
+        while(!q.empty() && i < vec.size()){
+            node* curr = q.front(); q.pop();
+            curr->left = newNode(vec[i++]);
+            q.push(curr->left);
+            if(i < vec.size()){
+                curr->right = newNode(vec[i++]);
+                q.push(curr->right);
             }
         }
+        
     }
 
 };
+
 
 //{ Driver Code Starts.
 int main(){
