@@ -133,37 +133,36 @@ struct Node
 */
 
 class Solution {
- public:
-
-// Helper function to perform DFS traversal
-void dfs(Node* node, vector<int>& path, vector<vector<int>>& result) {
-    if (!node) return;
-
-    // Add current node to path
-    path.push_back(node->data);
-
-    // If it's a leaf node, store the path in the result
-    if (!node->left && !node->right) {
-        result.push_back(path);
-    } else {
-        // Recur for left and right subtrees
-        dfs(node->left, path, result);
-        dfs(node->right, path, result);
+  public:
+  void dfs(Node* root ,  vector<int> &path , vector<vector<int>> &result){
+      if(!root)return;
+      path.push_back(root->data);
+      if(!root->left && !root->right){
+          result.push_back(path);
+          
+      }else{
+          dfs(root->left , path , result);
+          dfs(root->right , path , result);
+      }
+      path.pop_back();
+  }
+    vector<vector<int>> Paths(Node* root) {
+        // code here
+        vector<int> path;
+        vector<vector<int>> result;
+        dfs(root , path , result);
+        return result;
     }
-
-    // Backtrack to explore another path
-    path.pop_back();
-}
-
-// Main function to get all root-to-leaf paths
-vector<vector<int>> Paths(Node* root) {
-    vector<vector<int>> result;
-    vector<int> path;
-    dfs(root, path, result);
-    return result;
-}
-
 };
+
+
+
+
+
+
+
+
+
 
 
 
