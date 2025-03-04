@@ -12,15 +12,14 @@ using namespace std;
 class Solution
 {
 public:
-   bool isPossible(int a, int b) {
-    // Valid unique tree constructions: (Preorder + Inorder) or (Postorder + Inorder)
-    if ((a == 1 && b == 2) || (a == 2 && b == 1) ||  // Preorder + Inorder
-        (a == 2 && b == 3) || (a == 3 && b == 2)) {  // Postorder + Inorder
-        return true;
+    bool isPossible(int a,int b)
+    {
+        //code here
+        if((a == 1 && b == 2) || (a == 2 && b ==1)||
+          (a == 2 && b == 3) || ( a==3 && b == 2))return true;
+          return false;
     }
-    return false;  // Preorder + Postorder cannot uniquely determine a tree
-}
-
+    
 };
 
 
