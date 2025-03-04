@@ -102,20 +102,35 @@ struct Node
 };
 */
 
-class Solution {
-public:
-    int isSumProperty(Node *root) {
-        if (!root) return 1;  // Empty tree is valid
-        if (!root->left && !root->right) return 1;  // Leaf node is valid
-
-        int leftData = (root->left) ? root->left->data : 0;
-        int rightData = (root->right) ? root->right->data : 0;
-
-        if (root->data != leftData + rightData) return 0;
-
-        return isSumProperty(root->left) && isSumProperty(root->right);
+class Solution{
+    public:
+    //Function to check whether all nodes of a tree have the value 
+    //equal to the sum of their child nodes.
+    int isSumProperty(Node *root)
+    {
+     // Add your code here
+     if(!root)return 1;
+     if(!root->left && !root->right)return 1;
+     int leftdata = (root->left) ? root->left->data : 0;
+     int rightdata = (root->right) ? root->right->data : 0;
+     if(leftdata + rightdata != root->data)return 0;
+     return isSumProperty(root->left) && isSumProperty(root->right);
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
