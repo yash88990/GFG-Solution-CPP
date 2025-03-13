@@ -14,8 +14,6 @@ class Solution {
             else return 0;
         }
         if(dp[index][capacity] != -1)return dp[index][capacity];
-        
-        
         int include = 0 ;
         if(weight[index] <= capacity)
             include = value[index] + solve(capacity - weight[index] , value , weight , index -1 , dp);
