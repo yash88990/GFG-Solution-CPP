@@ -12,16 +12,13 @@ class Solution {
     vector<int> findUnion(vector<int> &a, vector<int> &b) {
         // Your code here
         // return vector with correct order of elements
-        vector<int> ans ;
-        for(int num : a){
-            ans.push_back(num);
-        }
-        for(int num : b){
-            ans.push_back(num);
-        }
+        // vector<int> ans ;
         set<int> s ;
-        s.insert(ans.begin() , ans.end());
-        vector<int> result (s.begin() , s.end());
+        for(int num : a) s.insert(num);
+        for(int num : b) s.insert(num);
+        vector<int> result ;
+        for(int num : s)
+           result.push_back(num);
         return result;
     }
         
