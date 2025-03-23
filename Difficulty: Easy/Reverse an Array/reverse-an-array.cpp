@@ -4,19 +4,15 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-    void solve(vector<int> &arr , int s  , int e ){
-        if(s > e)return ;
-        swap(arr[s] , arr[e]);
-        return solve(arr , s+1 , e-1);
-    }
     void reverseArray(vector<int> &arr) {
         // code here
-        int n = arr.size();
-        return solve(arr , 0,n-1);
+        reverse(arr.begin() , arr.end());
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
