@@ -9,8 +9,7 @@ class Solution {
   public:
     vector<int> sortArray(vector<int> &arr, int A, int B, int C) {
         // code here
-        
-        vector<int> ans;
+        vector<int>ans;
         for(int i = 0 ; i < arr.size() ; i++){
             int eqn = A * arr[i] * arr[i] + B * arr[i] + C;
             ans.push_back(eqn);
