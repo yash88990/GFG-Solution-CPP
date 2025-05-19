@@ -4,23 +4,25 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
-  int hcf(int a , int b ){
+  int solvehcf(int a ,int b){
       while(b != 0){
           int temp = b;
-          b = a % b;
+          b = a % b ;
           a = temp;
       }
-      return a ;
+      return a;
   }
     vector<int> lcmAndGcd(int a, int b) {
         // code here
-        int gcd = hcf(a , b);
-        int lcm = a * b / gcd;
-        return { lcm , gcd};
+        int hcf = solvehcf(a , b);
+        int lcm = a * b / hcf;
+        return { lcm , hcf};
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
