@@ -11,19 +11,17 @@ class Solution {
   public:
     int nthFibonacci(int n) {
         // code here
-        int first = 0 ;
-        int second = 1;
+        int f = 0;
+        int s = 1;
         int count = 2;
         if( n <= 1)return n;
         while(count <= n){
-            int next = first + second;
-            first = second ;
-            second = next;
+            int next = f + s;
+            f = s;
+            s = next;
             count++;
         }
-        return second;
-        
-        
+        return s;
     }
 };
 
