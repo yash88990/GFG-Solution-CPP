@@ -10,9 +10,10 @@ using namespace std;
 // User function Template for C++
 
 string utility(int number) {
-    // return the appropriate string
+
+    // write your code here
     switch(number){
-        case 1: return "One";
+        case 1 : return "One";
         case 2: return "Two";
         case 3: return "Three";
         case 4: return "Four";
@@ -21,7 +22,7 @@ string utility(int number) {
         case 7: return "Seven";
         case 8: return "Eight";
         case 9: return "Nine";
-        default: return "Unknown";
+        default : return "Unknown";
     }
 }
 
