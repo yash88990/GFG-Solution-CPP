@@ -7,24 +7,29 @@ using namespace std;
 class Solution {
   public:
     int cppIntType() {
-        int a;
-        cin >> a;
+        // code here
+        int a ;
+        cin>>a;
         return a;
+        
     }
 
     char cppCharType() {
-        char c;
-        cin >> c;
-        return c;
+        
+        // code here
+        char ch;
+        cin>>ch;
+        return ch;
     }
 
+        
     float cppFloatType() {
-        float f;
-        cin >> f;
+        // code here
+        float f ;
+        cin>>f;
         return f;
     }
 };
-
 
 
 //{ Driver Code Starts.
