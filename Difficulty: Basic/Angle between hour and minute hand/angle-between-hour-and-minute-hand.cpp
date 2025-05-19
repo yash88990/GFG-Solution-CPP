@@ -5,23 +5,14 @@ using namespace std;
 
 // } Driver Code Ends
 
-
 class Solution {
   public:
     int getAngle(int h, int m) {
-        // Angle made by minute hand
-        double minuteAngle = m * 6;
-
-        // Angle made by hour hand
-        double hourAngle = (h % 12) * 30 + (m / 60.0) * 30;
-
-        // Calculate the absolute difference between the two angles
-        double angle = abs(hourAngle - minuteAngle);
-
-        // The smaller angle between the two hands
-        angle = min(angle, 360 - angle);
-
-        // Return the floor of the angle
+        // code here
+        double minangle = m * 6;
+        double hourangle = ( h % 12) * 30 + ( m /60.0) * 30;
+        double angle = abs(minangle - hourangle);
+        angle = min( 360 - angle , angle);
         return floor(angle);
     }
 };
