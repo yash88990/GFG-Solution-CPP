@@ -8,22 +8,16 @@ using namespace std;
 class Solution {
   public:
     int binaryToDecimal(string &b) {
-        int ans = 0;
-        int i = 0; // position from right (LSB)
-
-        int n = b.length() - 1; // Start from the rightmost bit
-
-        while (n >= 0) {
-            int digit = b[n] - '0'; // Convert char to int
-
-            if (digit == 1) {
-                ans += pow(2, i);
-            }
-
+        // Code here.
+        int ans = 0 ; 
+        int i = 0;
+        int n = b.length() - 1;
+        while( n >= 0){
+            int digit = b[n] - '0';
+            if(digit == 1)ans += pow(2 , i);
             i++;
             n--;
         }
-
         return ans;
     }
 };
