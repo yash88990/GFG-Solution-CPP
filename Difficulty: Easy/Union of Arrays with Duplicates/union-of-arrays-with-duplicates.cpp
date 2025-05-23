@@ -1,61 +1,33 @@
-//{ Driver Code Starts
-// Initial template for C++
-
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
 // User function template in C++
 
 class Solution {
   public:
-    // Function to return the count of number of elements in union of two arrays.
-    int findUnion(vector<int>& a, vector<int>& b) {
-        // code here
-        set<int> unionset;
-        for(int num : a ){
-            unionset.insert(num);
-        }
-        for(int num : b ){
-            unionset.insert(num);
-        }
-        return unionset.size();
+  
+int findUnion(vector<int>& a, vector<int>& b) {
+    vector<int> unionVec;
+
+    // Step 1: Add all elements from both arrays
+    for (int i = 0; i < a.size(); i++) {
+        unionVec.push_back(a[i]);
     }
-};
-
-//{ Driver Code Starts.
-
-int main() {
-    int t;
-    cin >> t;
-    cin.ignore(); // Ignore the newline character after reading t
-
-    while (t--) {
-        vector<int> a;
-        vector<int> b;
-
-        string input;
-        // For a
-        getline(cin, input); // Read the entire line for the array elements
-        stringstream ss(input);
-        int number;
-        while (ss >> number) {
-            a.push_back(number);
-        }
-
-        // For b
-        getline(cin, input); // Read the entire line for the array elements
-        stringstream ss2(input);
-        while (ss2 >> number) {
-            b.push_back(number);
-        }
-
-        Solution ob;
-        cout << ob.findUnion(a, b) << endl;
-        cout << '~' << endl;
+    for (int i = 0; i < b.size(); i++) {
+        unionVec.push_back(b[i]);
     }
 
-    return 0;
+    // Step 2: Sort the vector
+    sort(unionVec.begin(), unionVec.end());
+
+    // Step 3: Remove duplicates manually
+    vector<int> uniqueVec;
+    uniqueVec.push_back(unionVec[0]);
+    for (int i = 1; i < unionVec.size(); i++) {
+        if (unionVec[i] != unionVec[i - 1]) {
+            uniqueVec.push_back(unionVec[i]);
+        }
+    }
+
+    // Step 4: Return the size of unique vector (number of elements in union)
+    return uniqueVec.size();
 }
-// } Driver Code Ends
+
+};
