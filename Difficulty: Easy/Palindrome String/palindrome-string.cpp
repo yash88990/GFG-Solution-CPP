@@ -3,8 +3,8 @@ class Solution {
     // Function to check if a string is a palindrome.
     bool isPalindrome(string& s) {
         // code here
-       string originalstr = s;
-       reverse(s.begin() , s.end());
-       return originalstr == s;
+        string reversestr = s;
+        reverse(reversestr.begin() , reversestr.end());
+        return s == reversestr;
     }
 };
