@@ -9,6 +9,7 @@ class Solution {
             if(seen.find(ch) == seen.end()){
                 result += ch;
                 seen.insert(ch);
+                
             }
         }
         return result;
