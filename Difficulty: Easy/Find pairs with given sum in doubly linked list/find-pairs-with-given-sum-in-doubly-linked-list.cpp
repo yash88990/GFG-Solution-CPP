@@ -15,32 +15,51 @@ public:
 class Solution {
   public:
     vector<pair<int, int>> findPairsWithGivenSum(Node *head, int target) {
-        vector<pair<int, int>> result;
-        if (!head) return result;
-
-        Node* left = head;
-        Node* right = head;
-
-        // Move right to the end of the list
-        while (right->next) {
+        // code here
+        vector<pair<int,int>> result;
+        if(!head)return result;
+        Node* left = head, *right = head;
+        
+        while(right->next){
             right = right->next;
         }
-
-        // Two pointers until they meet or cross
-        while (left != right && right->next != left) {
+        while(left != right &&right->next != left){
             int sum = left->data + right->data;
-
-            if (sum == target) {
-                result.push_back({left->data, right->data});
-                left = left->next;
+            if(sum == target){
+                result.push_back({left->data , right->data});
+                left=left->next;
                 right = right->prev;
-            } else if (sum < target) {
-                left = left->next;  // Increase sum by moving left forward
-            } else {
-                right = right->prev;  // Decrease sum by moving right backward
+            }else if(sum < target){
+                
+                left = left->next;
+            }else{
+                right = right->prev;
             }
         }
-
         return result;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
