@@ -30,11 +30,11 @@ class Solution {
            delete head;
            return newHead;
        }
+       int count = 1 ;
        
-       for(int i = 1 ; curr && i < x ; i++){
-           curr = curr->next;
-           
-           
+       while(count < x ){
+           curr= curr->next;
+           count++;
        }
        
        if(!curr)return head;
